@@ -6,4 +6,4 @@ limited number of them they may leave the lines commented and manually reset the
 the number of addresses in addresses.txt.
 
 Credit due to Rio at https://stackoverflow.com/users/8230132/rio for his answer https://stackoverflow.com/a/52329759
-on which the program is based. 
+on which the program is based.
