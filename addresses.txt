@@ -1,1 +1,2 @@
 listofemailaddressestosendto@here.com
+theseemailaddressesshouldbeonseparatelines@hello.com

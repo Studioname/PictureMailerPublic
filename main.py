@@ -44,40 +44,44 @@ def add_image(msg, img_string, cid_ref):
     msg.attach(msgImage)
     return msg
 
+# compose msg
+
+msg = MIMEMultipart('related')
+
+#email headers
+msg['Subject'] = 'Fine London Joinery Ltd'
+msg['From'] = email
+msg['To'] = ""
+
+# set the plain text body
+html = """\
+<html>
+  <head></head>
+    <body>
+      <img src="cid:image1" alt="Brochure Page 1" style="width:75%;height:75%;"><br>
+      <img src="cid:image2" alt="Brochure Page 2" style="width:75%;height:75%;"><br> 
+      <img src="cid:image3" alt="Brochure Page 3" style="width:75%;height:75%;"><br>
+    </body>
+</html>
+"""
+# Record the MIME types of text/html.
+part2 = MIMEText(html, 'html')
+
+# Attach parts into message container.
+msg.attach(part2)
+
+# This example assumes the image is in the current directory
+msg = add_image(msg, "picture0", "image1")
+msg = add_image(msg, "picture1", "image2")
+msg = add_image(msg, "picture2", "image3")
 
 # iterate through addresses and send email
 # if iterator == len(addresses):
 #     iterator = 0
 
 for address in addresses[iterator:]:
-    msg = MIMEMultipart('related')
-    #email headers
-    msg['Subject'] = 'Fine London Joinery Ltd'
-    msg['From'] = email
+
     msg['To'] = address
-
-    # set the plain text body
-    html = """\
-    <html>
-      <head></head>
-        <body>
-          <img src="cid:image1" alt="Brochure Page 1" style="width:75%;height:75%;"><br>
-          <img src="cid:image2" alt="Brochure Page 2" style="width:75%;height:75%;"><br> 
-          <img src="cid:image3" alt="Brochure Page 3" style="width:75%;height:75%;"><br>
-        </body>
-    </html>
-    """
-    # Record the MIME types of text/html.
-    part2 = MIMEText(html, 'html')
-
-    # Attach parts into message container.
-    msg.attach(part2)
-
-    # This example assumes the image is in the current directory
-    msg = add_image(msg, "picture0", "image1")
-    msg = add_image(msg, "picture1", "image2")
-    msg = add_image(msg, "picture2", "image3")
-
     # Send the message via local SMTP server.
     try:
         connection = smtplib.SMTP(smtp, port=587)
