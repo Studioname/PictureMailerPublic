@@ -14,7 +14,6 @@ from email.mime.image import MIMEImage
 # we also create a text file which writes the index our loop has written up to
 # that way in case of an error we can pick up from where we left off
 # so we use the saved number as an iterator, we can create the text file ahead of time and set it to zero
-# port 587
 
 iterator_file = open("iterator.txt", "r")
 iterator = int(iterator_file.readline().strip())
