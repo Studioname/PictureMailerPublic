@@ -49,7 +49,7 @@ def add_image(msg, img_string, cid_ref):
 msg = MIMEMultipart('related')
 
 #email headers
-msg['Subject'] = 'Fine London Joinery Ltd'
+msg['Subject'] = 'Subject here'
 msg['From'] = email
 msg['To'] = ""
 
