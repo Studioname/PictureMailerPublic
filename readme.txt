@@ -8,4 +8,4 @@ the number of addresses in addresses.txt.
 Credit due to Rio at https://stackoverflow.com/users/8230132/rio for his answer https://stackoverflow.com/a/52329759
 on which the program is based.
 
-Todo: Add pictures to a list and iterate through them to embed as opposed to adding them manually
+To do: Add pictures to a list and iterate through them to embed as opposed to adding them manually
